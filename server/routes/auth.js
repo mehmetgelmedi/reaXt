@@ -7,7 +7,18 @@ router.post('/signup', (req,res)=>{
 
 router.post('/login',(req,res)=>{
     //res.send('login');
-    return res.status(200).end();
+    var body=req.body;
+    var username=body.username;
+    var password=body.password;
+    console.log(username+' - '+password);
+    //console.log(body);
+    var r='';
+    if(username=='meg' && password=='123')
+        r='basarili '+username+' - '+password+' '+body;
+    else
+        r='basarisiz '+username+' - '+password+' '+body;
+    
+    return res.send(r);
 });
 
 module.exports = router;

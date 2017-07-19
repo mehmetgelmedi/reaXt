@@ -9,6 +9,7 @@ const express = require('express'),
 app.use(morgan('dev'));
 app.use(express.static(path.resolve(__dirname,'..','build')));
 app.use(bodyParser.urlencoded({extended : false}));
+app.use(bodyParser.json())
 app.use('/auth', authRoutes);
 
 app.get('*',(req,res)=>{
