@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import httpRequest from '../../service/httpRequest';
+import httpRequest from '../service/httpRequest';
 import {
     Button,Textfield,
     Layout,Header,
