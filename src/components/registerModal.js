@@ -6,6 +6,7 @@ import {
 from 'react-mdl';
 import 'react-mdl/extra/material.js';
 import 'react-mdl/extra/material.css';
+import RegisterForm from '../layouts/registerForm';
 
 class Register extends Component {
   constructor(props) {
@@ -33,12 +34,12 @@ class Register extends Component {
       <div>
         <px onClick={this.handleOpenDialog}>Sign up</px>
         <Dialog  open={this.state.openDialog}>
-          <DialogTitle>Allow data collection?</DialogTitle>
+          <DialogTitle>Create an account</DialogTitle>
           <DialogContent>
-            <p>Allowing us to collect data will let us get you the information you want faster.</p>
+              <RegisterForm />
           </DialogContent>
-          <DialogActions fullWidth>
-            <Button type='button' onClick={this.handleCloseDialog}>Disagree</Button>
+          <DialogActions>
+            <Button type='button' onClick={this.handleCloseDialog}>Close</Button>
           </DialogActions>
         </Dialog>
       </div>

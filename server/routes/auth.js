@@ -2,7 +2,15 @@ const express = require('express'),
       router =new express.Router();
 
 router.post('/signup', (req,res)=>{
-    return res.status(200).end();
+    var body=req.body;
+    var username=body.username;
+    var name=body.name;
+    var surname=body.surname;
+    var password=body.password;
+
+    return res.send(username+' - '+name+' - '+surname+' - '+password);
+
+    //return res.status(200).end();
 });
 
 router.post('/login',(req,res)=>{

@@ -32,7 +32,7 @@ class App extends Component {
             <Header transparent title="ReaXt" style={{color: 'white'}}>
                 <Navigation>
                     <a href="/login">Login</a>
-                    <a href="#"><Register /></a>
+                    <Register />
                     <a href="/help">Help</a>
                 </Navigation>
             </Header>
