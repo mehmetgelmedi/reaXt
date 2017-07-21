@@ -9,6 +9,8 @@
     "dependencies": "0.0.1",
     "express": "^4.15.3",
     "morgan": "^1.8.2",
+    "mysql": "^2.13.0",
+    "password-hash": "^1.2.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-mdl": "^1.10.3",

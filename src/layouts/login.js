@@ -23,7 +23,7 @@ class LoginForm extends Component {
     handleSubmit(event){
         event.preventDefault();
 
-        alert('Selam, '+this.state.username+' - '+this.state.password);
+        //alert('Selam, '+this.state.username+' - '+this.state.password);
 
         var data={
             username:this.state.username,
@@ -31,7 +31,13 @@ class LoginForm extends Component {
         };
         httpRequest.post('/auth/login', data)
         .then((res)=>{
-            console.log(res);
+            if(res.data=='basarili'){
+                document.location.href='/';
+                //console.log(res.data);
+            }
+            else{
+                alert('login failed');
+            }
         })
         .catch((err)=>{
             console.log(err);
