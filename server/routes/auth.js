@@ -1,17 +1,6 @@
 const express = require('express'),
       router =new express.Router(),
-      mysql = require('mysql');
-
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : '',
-  database : 'megdb'
-});
-
-connection.connect((err)=>{
-    console.log(err);
-});
+      connection = require('../config/db');
 
 router.post('/signup', (req,res)=>{
     var body=req.body;
@@ -21,7 +10,7 @@ router.post('/signup', (req,res)=>{
     var password=body.password;
 
     var result='';
-    var query='insert into user(username,name,surname,password) values (?,?,?,?)';
+    var query='insert into user(username,name,surname,password,createdat) values (?,?,?,?,now())';
     connection.query(query,[username, name, surname, password], (err,rows)=> {
         if (err) throw err
 
