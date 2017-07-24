@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
 import httpRequest from '../service/httpRequest';
-import {
-    Button,Textfield,
-    Layout,Header,
-    Navigation,Content,Drawer
-} from 'react-mdl';
-import 'react-mdl/extra/material.js';
-import 'react-mdl/extra/material.css';
+import LoginForm from '../components/loginForm';
 
-class LoginForm extends Component {
+class LoginPage extends Component {
     constructor(props) {
         super(props);
         this.state={
@@ -53,37 +47,14 @@ class LoginForm extends Component {
     }
     render() {
         return (
-    <div style={{height: '300px', position: 'relative'}}>
-    <Layout >
-        <Header transparent title="ReaXt Login" style={{color: 'black'}}/>
-        <Content>
-                <form onSubmit={this.handleSubmit} >
-                    <Textfield
-                        onChange={this.handleUsernameChange}
-                        value={this.state.username}
-                        label="Enter Username"
-                        floatingLabel
-                        type="text"
-                        style={{width: '200px'}}
-                    />
-                    <br />
-                    <Textfield
-                        onChange={this.handlePasswordChange}
-                        value={this.state.password}
-                        type="password"
-                        label="Enter Password"
-                        floatingLabel
-                        style={{width: '200px'}}
-                    />
-                    <br />
-                    <Button raised>Login</Button>
-                </form>
-            </Content>
-    </Layout>
-</div>
-
+            <LoginForm 
+            handleSubmit={this.handleSubmit}
+            handleUsernameChange={this.handleUsernameChange}
+            handlePasswordChange={this.handlePasswordChange}
+            username={this.state.username}
+            password={this.state.password} />
         );
     }
 }
 
-export default LoginForm;
+export default LoginPage;

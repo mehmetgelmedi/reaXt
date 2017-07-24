@@ -6,6 +6,7 @@ import {
 import 'react-mdl/extra/material.js';
 import 'react-mdl/extra/material.css';
 import Register from '../components/registerModal';
+import {Link} from 'react-router';
 
 class App extends Component {
   // static propTypes = {}
@@ -31,16 +32,16 @@ class App extends Component {
           <Layout style={{height: '250px',background: 'url(http://www.getmdl.io/assets/demos/transparent.jpg) center / cover'}}>
             <Header transparent title="ReaXt" style={{color: 'white'}}>
                 <Navigation>
-                    <a href="/login">Login</a>
+                    <Link to='login'>Login</Link>
                     <Register />
-                    <a href="/help">Help</a>
+                    <Link to='help'>Help</Link>
                 </Navigation>
             </Header>
             <Drawer title="ReaXt">
                 <Navigation>
-                    <a href="#">M3</a>
-                    <a href="#">E2</a>
-                    <a href="#">G0</a>
+                    <Link to='#'>M3</Link>
+                    <Link to='#'>E2</Link>
+                    <Link to='#'>G0</Link>
                 </Navigation>
             </Drawer>
             <Content />
