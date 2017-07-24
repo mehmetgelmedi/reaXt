@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import httpRequest from '../service/httpRequest';
 import LoginForm from '../components/loginForm';
+import store from 'store';
 
 class LoginPage extends Component {
     constructor(props) {
@@ -26,7 +27,9 @@ class LoginPage extends Component {
         httpRequest.post('/auth/login', data)
         .then((res)=>{
             if(res.data=='basarili'){
-                document.location.href='/';
+                store.set('user',{username:data.username,token:'privatetoken'});
+                //console.log(store.get('user').username);
+                document.location.href='/profile';
                 //console.log(res.data);
             }
             else{

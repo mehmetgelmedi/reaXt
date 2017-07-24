@@ -15,7 +15,8 @@
     "react-dom": "^15.6.1",
     "react-mdl": "^1.10.3",
     "react-router": "^2.8.1",
-    "react-scripts": "1.0.10"
+    "react-scripts": "1.0.10",
+    "store": "^2.0.12"
   },
   "scripts": {
     "start": "react-scripts start",
